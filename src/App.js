@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./styles.css";
+import Home from "./pages/home";
+import About from "./pages/about";
+import { Route, Switch } from "react-router-dom";
+import Accessories from "./pages/accessories";
+import Camera from "./pages/camera";
+import Refrigerator from "./pages/refrigerator";
+import TV from "./pages/tv";
+import Breadcrumbs from "./pages/breadcrumbs";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Breadcrumbs />
+      <Switch>
+        <Route exact from="/" render={props => <Home {...props} />} />
+        <Route exact path="/about" render={props => <About {...props} />} />
+        <Route exact path="/accessories" render={props => <Accessories {...props} />} />
+        <Route
+          exact
+          path="/accessories/cameras"
+          render={props => <Camera {...props} />}
+        />
+        <Route
+          exact
+          path="/accessories/tv"
+          render={props => <TV {...props} />}
+        />
+        <Route
+          exact
+          path="/accessories/refrigerator"
+          render={props => <Refrigerator {...props} />}
+        />
+      </Switch>
+    </>
   );
 }
 
-export default App;
