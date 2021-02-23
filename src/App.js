@@ -6,6 +6,8 @@ import { Route, Switch } from "react-router-dom";
 import Accessories from "./pages/accessories";
 import Camera from "./pages/camera";
 import Refrigerator from "./pages/refrigerator";
+import Onedoor from "./pages/onedoor"
+import Twodoor from "./pages/twodoor"
 import TV from "./pages/tv";
 import Breadcrumbs from "./pages/breadcrumbs";
 
@@ -19,7 +21,7 @@ export default function App() {
         <Route exact path="/accessories" render={props => <Accessories {...props} />} />
         <Route
           exact
-          path="/accessories/cameras"
+          path="/accessories/camera"
           render={props => <Camera {...props} />}
         />
         <Route
@@ -31,6 +33,16 @@ export default function App() {
           exact
           path="/accessories/refrigerator"
           render={props => <Refrigerator {...props} />}
+        />
+        <Route
+          exact
+          path="/accessories/refrigerator/one"
+          render={props => <Onedoor {...props} />}
+        />
+        <Route
+          exact
+          path="/accessories/refrigerator/two"
+          render={props => <Twodoor {...props} />}
         />
       </Switch>
     </>

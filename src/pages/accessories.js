@@ -9,7 +9,7 @@ const Accessories = props => {
       <Button onClick={() => history.push("/accessories/refrigerator")}>refrigerator</Button>
       <Button onClick={() => history.push("/accessories/tv")}>tv</Button>
     </>
-  );
+  ); 
 };
 
 export default Accessories;
