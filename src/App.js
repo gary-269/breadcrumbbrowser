@@ -13,7 +13,7 @@ import Breadcrumbs from "./pages/breadcrumbs";
 
 export default function App() {
   return (
-    <>
+    <div>
       <Breadcrumbs />
       <Switch>
         <Route exact from="/" render={props => <Home {...props} />} />
@@ -45,7 +45,7 @@ export default function App() {
           render={props => <Twodoor {...props} />}
         />
       </Switch>
-    </>
+    </div>
   );
 }
 
